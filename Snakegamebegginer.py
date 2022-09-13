@@ -124,7 +124,7 @@ while True:
             if main_game.snake.direction.x!=1:
                 main_game.snake.direction=Vector2(-1,0)
                 
-    SCREEN.fill((128,128,128))    
+    SCREEN.fill((32,178,170))    
     main_game.draw_elements()
     pygame.display.update()
     CLOCK.tick(30)
