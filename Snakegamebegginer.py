@@ -38,8 +38,8 @@ class Food:
         self.randomize()
     def draw_food(self):
         food_rect=((int(self.pos.x*BLOCKSIZE),int(self.pos.y*BLOCKSIZE),BLOCKSIZE,BLOCKSIZE))
-        SCREEN.blit(APPLE,food_rect)
-        #pygame.draw.rect(SCREEN,(126,166,114),food_rect)
+        #SCREEN.blit(APPLE,food_rect)
+        pygame.draw.rect(SCREEN,(126,166,114),food_rect)
     def randomize(self):
         self.x=random.randint(0,BLOCKSIZE-1)
         self.y=random.randint(0,BLOCKSIZE-1)
@@ -57,6 +57,7 @@ class Main:
     def draw_elements(self):
         self.food.draw_food()
         self.snake.draw_snake()
+        self.draw_score()
     def check_collision(self):
         if self.food.pos==self.snake.body[0]:
             ATE_SOUND.play()
@@ -90,7 +91,7 @@ GAME_FONT=pygame.font.Font("Raleway-Regular.ttf",20)
 #Image Surfaces.
 SNAKE=pygame.image.load("Block.png")
 SNAKE=pygame.transform.scale(SNAKE,(25,25))
-APPLE=pygame.image.load("apple.png").convert_alpha()
+#APPLE=pygame.image.load("apple.png").convert_alpha()
 
 ATE_SOUND=pygame.mixer.Sound("crunch.wav")
 
