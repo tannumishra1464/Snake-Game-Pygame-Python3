@@ -75,7 +75,7 @@ class Main:
         sys.exit()
     def draw_score(self):
         score_text=str(len(self.snake.body)-3)
-        score_surface=GAME_FONT.render(score_text,True,(56,74,12))
+        score_surface=GAME_FONT.render(score_text,True,(0,0,0))
         score_x=int(BLOCKNUMBER*BLOCKSIZE-60)
         score_y=int(BLOCKNUMBER*BLOCKSIZE-60)
         score_rect==score_surface.get_rect(center=(score_x,scorey))
